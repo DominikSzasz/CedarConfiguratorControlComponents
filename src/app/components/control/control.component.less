@@ -1,0 +1,123 @@
+@control-width: 300px;
+@control-height: 460px;
+@top-margin: 30px;
+@bottom-margin: 30px;
+@side-margin: 30px;
+@img-divider-gap: 30px;
+@divider-title-gap: 20px;
+@title-text-gap: 15px;
+@content-width: 240px;
+@divider-width: 260px;
+@divider-height: 0.5px;
+@title-font: 'Noto Sans';
+@text-font: 'Noto Sans';
+@title-font-weight: 400;
+@text-font-weight: 400;
+@title-font-style: none;
+@text-font-style: none;
+
+@title-size: 16px;
+@text-size: 13px;
+@unselected-color: rgba(255, 255, 255, 1);
+@default-selected-color: rgba(238, 239, 237, 1);
+@selected-color: rgba(221, 225, 218, 1);
+@disabled-color: rgba(238, 238, 238, 1);
+@hover-color: rgba(221, 225, 218, 1);
+@clicked-color: rgba(221, 225, 218, 1);
+@default-border-width: 2px;
+@clicked-border-width: 4px;
+@default-border-color: rgba(51, 67, 94, 1);
+@disabled-border-color: rgba(185, 185, 185, 1);
+
+@unselected-title-color: rgba(51, 67, 94, 1);
+@selected-title-color: rgba(51, 67, 94, 1);
+@disabled-title-color: rgba(185, 185, 185, 1);
+
+@unselected-text-color: rgba(51, 67, 94, 1);
+@selected-text-color: rgba(51, 67, 94, 1);
+@disabled-text-color: rgba(185, 185, 185, 1);
+
+@unselected-divider-color: rgba(51, 67, 94, 1);
+@selected-divider-color: rgba(51, 67, 94, 1);
+@disabled-divider-color: rgba(185, 185, 185, 1);
+
+
+::ng-deep :root {
+    --unselected-color: @unselected-color;
+    --default-selected-color: @selected-color;
+    --selected-color: @selected-color;
+    --disabled-color: @disabled-color;
+    --hover-color: @hover-color;
+    --clicked-color: @unselected-color;
+
+    --disabled-border-color: @disabled-border-color;
+
+    --selected-title-color: @selected-title-color;
+    --unselected-title-color: @unselected-title-color;
+    --disabled-title-color: @disabled-title-color;
+
+    --selected-text-color: @selected-text-color;
+    --unselected-text-color: @unselected-text-color;
+    --disabled-text-color: @disabled-text-color;
+    
+    --selected-divider-color: @selected-divider-color;
+    --unselected-divider-color: @unselected-divider-color;
+    --disabled-divider-color: @disabled-divider-color;
+}
+  
+img {
+    margin: 15px;
+    width: @content-width;
+    margin-bottom: @img-divider-gap;
+}
+.control-hr {
+    margin-top: 0;
+    width: @divider-width;
+    height: @divider-height;
+    background-color: @unselected-divider-color;
+}
+.control-card {
+    padding-top: @top-margin;
+    padding-bottom: @bottom-margin;
+    width: @control-width;
+    height: @control-height;
+    background-color: @unselected-color;
+    border: @default-border-width solid @default-border-color;
+    
+}
+.control-card:hover {
+    background-color: @hover-color;
+}
+.control-card:active {
+    background-color: @clicked-color;
+    border: @clicked-border-width solid @default-border-color;
+}
+.control-img {
+    text-align: center;
+}
+.control-title {
+    font-family: @title-font;
+    font-size: @title-size;
+    font-weight: @title-font-weight;
+    font-style: @title-font-style;
+
+    margin-top: @divider-title-gap;
+    margin-bottom: 0;
+    margin-left: @side-margin;
+    margin-right: @side-margin;
+
+    width: @content-width;
+}
+.control-text {
+    font-family: @text-font;
+    font-size: @text-size;
+    font-weight: @text-font-weight;
+    font-style: @text-font-style;
+
+    margin-top: @title-text-gap;
+    margin-bottom: 0;
+    margin-left: @side-margin;
+    margin-right: @side-margin;
+    
+    width: @content-width;
+}

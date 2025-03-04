@@ -1,0 +1,45 @@
+@title-font: 'Noto Sans';
+@title-size: 50px;
+@title-font-weight: 400;
+@title-font-style: none;
+@title-font-color: black;
+@control-container-width: 1000px;
+@control-max-container-width: 1200px;
+@control-min-container-width: 250px;
+@control-max-container-height: 1438px;
+@control-min-container-height: 500px;
+@control-top-margin: 25px;
+@control-bottom-margin: 25px;
+@control-gap-horizontal: 10px;
+@control-gap-vertical: 10px;
+@title-container-gap: 0px;
+@control-container-background-color: white;
+@title-font-color: black;
+@control-container-border-color: black;
+@control-container-border-width: 4px;
+
+.control-container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: @control-gap-horizontal;
+    row-gap: @control-gap-vertical;
+    border: @control-container-border-width solid @control-container-border-color;
+    background-color: @control-container-background-color;
+    justify-content: center;
+    align-content: baseline;
+    max-width: @control-max-container-width;
+    min-width: @control-min-container-width;
+    max-height: @control-max-container-height;
+    min-height: @control-min-container-height;
+    padding-top: @control-top-margin;
+    padding-bottom: @control-bottom-margin;
+}
+
+.title {
+    margin-bottom: @title-container-gap;
+    font-family: @title-font;
+    font-size: @title-size;
+    font-weight: @title-font-weight;
+    font-style: @title-font-style;
+    color: @title-font-color;
+}
