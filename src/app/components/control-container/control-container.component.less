@@ -9,6 +9,7 @@
 @control-min-container-height: 500px;
 @control-top-margin: 25px;
 @control-bottom-margin: 25px;
+@control-side-margin: 25px;
 @control-gap-horizontal: 10px;
 @control-gap-vertical: 10px;
 @title-container-gap: 0px;
@@ -16,6 +17,7 @@
 @title-font-color: black;
 @control-container-border-color: black;
 @control-container-border-width: 4px;
+@display-orientation: center;
 
 .control-container {
     display: flex;
@@ -24,7 +26,7 @@
     row-gap: @control-gap-vertical;
     border: @control-container-border-width solid @control-container-border-color;
     background-color: @control-container-background-color;
-    justify-content: center;
+    justify-content: @display-orientation;
     align-content: baseline;
     max-width: @control-max-container-width;
     min-width: @control-min-container-width;
@@ -32,6 +34,8 @@
     min-height: @control-min-container-height;
     padding-top: @control-top-margin;
     padding-bottom: @control-bottom-margin;
+    padding-left: @control-side-margin;
+    padding-right: @control-side-margin;
     box-sizing: border-box;
 }
 
