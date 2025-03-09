@@ -1,5 +1,5 @@
 @control-width: 300px;
-@control-height: 460px;
+@control-height: 450px;
 @top-margin: 30px;
 @bottom-margin: 30px;
 @side-margin: 30px;
@@ -18,29 +18,46 @@
 
 @title-size: 16px;
 @text-size: 13px;
+
 @unselected-color: rgba(255, 255, 255, 1);
 @default-selected-color: rgba(238, 239, 237, 1);
 @selected-color: rgba(221, 225, 218, 1);
 @disabled-color: rgba(238, 238, 238, 1);
 @hover-color: rgba(221, 225, 218, 1);
 @clicked-color: rgba(221, 225, 218, 1);
+
 @default-border-width: 2px;
 @clicked-border-width: 4px;
-@default-border-color: rgba(51, 67, 94, 1);
+@selected-border-color: rgba(51, 67, 94, 1);
 @disabled-border-color: rgba(185, 185, 185, 1);
+@unselected-border-color: rgba(51, 67, 94, 1);
+@default-selected-border-color: rgba(51, 67, 94, 1);
+@clicked-border-color: rgba(51, 67, 94, 1);
+@hover-border-color: rgba(51, 67, 94, 1);
+
 
 @unselected-title-color: rgba(51, 67, 94, 1);
 @selected-title-color: rgba(51, 67, 94, 1);
 @disabled-title-color: rgba(185, 185, 185, 1);
+@default-selected-title-color: rgba(51, 67, 94, 1);
+@clicked-title-color: rgba(51, 67, 94, 1);
+@hover-title-color: rgba(51, 67, 94, 1);
 
 @unselected-text-color: rgba(51, 67, 94, 1);
 @selected-text-color: rgba(51, 67, 94, 1);
 @disabled-text-color: rgba(185, 185, 185, 1);
+@default-selected-text-color: rgba(51, 67, 94, 1);
+@clicked-text-color: rgba(51, 67, 94, 1);
+@hover-text-color: rgba(51, 67, 94, 1);
 
 @unselected-divider-color: rgba(51, 67, 94, 1);
 @selected-divider-color: rgba(51, 67, 94, 1);
 @disabled-divider-color: rgba(185, 185, 185, 1);
+@default-selected-divider-color: rgba(51, 67, 94, 1);
+@clicked-divider-color: rgba(51, 67, 94, 1);
+@hover-divider-color: rgba(51, 67, 94, 1);
 
+@display-location: center;
 
 ::ng-deep :root {
     --unselected-color: @unselected-color;
@@ -50,29 +67,43 @@
     --hover-color: @hover-color;
     --clicked-color: @unselected-color;
 
+    --selected-border-color: @selected-border-color;
+    --unselected-border-color: @unselected-border-color;
+    --default-selected-border-color: @default-selected-border-color;
     --disabled-border-color: @disabled-border-color;
+    --clicked-border-color: @clicked-border-color;
+    --hover-border-color: @hover-border-color;
 
     --selected-title-color: @selected-title-color;
     --unselected-title-color: @unselected-title-color;
     --disabled-title-color: @disabled-title-color;
+    --default-selected-title-color: @default-selected-title-color;
+    --clicked-title-color: @clicked-title-color;
+    --hover-title-color: @hover-title-color;
 
     --selected-text-color: @selected-text-color;
     --unselected-text-color: @unselected-text-color;
     --disabled-text-color: @disabled-text-color;
+    --default-selected-text-color: @default-selected-text-color;
+    --clicked-text-color: @clicked-text-color;
+    --hover-text-color: @hover-text-color;
     
     --selected-divider-color: @selected-divider-color;
     --unselected-divider-color: @unselected-divider-color;
     --disabled-divider-color: @disabled-divider-color;
+    --default-disabled-divider-color: @default-selected-divider-color;
+    --clicked-divider-color: @clicked-divider-color;
+    --hovers-divider-color: @hover-divider-color;
 }
   
 img {
     margin: 15px;
-    width: @content-width;
+    width: 80%;
     margin-bottom: @img-divider-gap;
 }
 .control-hr {
     margin-top: 0;
-    width: @divider-width;
+    width: 80%;
     height: @divider-height;
     background-color: @unselected-divider-color;
 }
@@ -81,19 +112,47 @@ img {
     padding-bottom: @bottom-margin;
     width: @control-width;
     height: @control-height;
+    overflow: auto;
     background-color: @unselected-color;
-    border: @default-border-width solid @default-border-color;
+    border: @default-border-width solid @unselected-border-color;
     
 }
-.control-card:hover {
-    background-color: @hover-color;
-}
-.control-card:active {
-    background-color: @clicked-color;
-    border: @clicked-border-width solid @default-border-color;
-}
+.control-card {
+    &:hover {
+      background-color: @hover-color;
+      border: @default-border-width solid @hover-border-color;
+      
+      .control-title {
+        color: @hover-title-color;
+      }
+      .control-text {
+        color: @hover-text-color;
+      }
+      .control-hr {
+        color: @hover-divider-color;
+      }
+    }
+  }
+  
+.control-card {
+    &:active {
+      background-color: @clicked-color;
+      border: @clicked-border-width solid @clicked-border-color;
+      
+      .control-title {
+        color: @clicked-title-color;
+      }
+      .control-text {
+        color: @clicked-text-color;
+      }
+      .control-hr {
+        color: @clicked-divider-color;
+      }
+    }
+  }
+  
 .control-img {
-    text-align: center;
+    text-align: @display-location;
 }
 .control-title {
     font-family: @title-font;
@@ -106,7 +165,7 @@ img {
     margin-left: @side-margin;
     margin-right: @side-margin;
 
-    width: @content-width;
+    width: 80%;
 }
 .control-text {
     font-family: @text-font;
@@ -119,5 +178,5 @@ img {
     margin-left: @side-margin;
     margin-right: @side-margin;
     
-    width: @content-width;
+    width: 80%;
 }

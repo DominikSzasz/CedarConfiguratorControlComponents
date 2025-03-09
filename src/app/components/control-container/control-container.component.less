@@ -3,7 +3,6 @@
 @title-font-weight: 400;
 @title-font-style: none;
 @title-font-color: black;
-@control-container-width: 1000px;
 @control-max-container-width: 1200px;
 @control-min-container-width: 250px;
 @control-max-container-height: 1438px;
@@ -33,6 +32,7 @@
     min-height: @control-min-container-height;
     padding-top: @control-top-margin;
     padding-bottom: @control-bottom-margin;
+    box-sizing: border-box;
 }
 
 .title {
@@ -42,4 +42,7 @@
     font-weight: @title-font-weight;
     font-style: @title-font-style;
     color: @title-font-color;
+}
+configurator-control:active {
+    margin: -2px;
 }

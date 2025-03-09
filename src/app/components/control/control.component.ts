@@ -36,6 +36,10 @@ export class ControlComponent {
     if (this.state == ControlStates.defaultSelected)
     {
       controlCard.style.backgroundColor = "var(--default-selected-color)";
+      controlCard.style.borderColor = "var(--default-selected-border-color)";
+      controlTitle.style.color = "var(--default-selected-title-color)";
+      controlText.style.color = "var(--default-selected-text-color)";
+      controlDivider.style.backgroundColor = "var(--default-selected-divider-color)";
     }
 
   }
@@ -50,6 +54,7 @@ export class ControlComponent {
       case 0:
         this.state = ControlStates.selected
         controlCard.style.backgroundColor = "var(--selected-color)";
+        controlCard.style.borderColor = "var(--selected-border-color)";
         controlTitle.style.color = "var(--selected-title-color)";
         controlText.style.color = "var(--selected-text-color)";
         controlDivider.style.backgroundColor = "var(--selected-divider-color)";
@@ -57,6 +62,7 @@ export class ControlComponent {
       case 2:
         this.state = ControlStates.unselected
         controlCard.style.backgroundColor = "var(--unselected-color)";
+        controlCard.style.borderColor = "var(--selected-border-color)";
         controlTitle.style.color = "var(--unselected-title-color)";
         controlText.style.color = "var(--unselected-text-color)";
         controlDivider.style.backgroundColor = "var(--unselected-divider-color)";
