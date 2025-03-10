@@ -1,12 +1,14 @@
 <div class="container">
     <h1 class="title">Container</h1>
     <div class="control-container">
-        <configurator-control class="control"/>
-        <configurator-control class="control"/>
-        <configurator-control class="control"/>
-        <configurator-control class="control"/>
-        <configurator-control class="control"/>
-        <configurator-control class="control"/>
+        <configurator-control 
+          *ngFor="let control of controlsData"
+          [cardImg]="control.imageRef"
+          [cardTitle]="control.title"
+          [cardText]="control.description"
+          [cardId]="control.controlId"
+          [selectedControls]="selectedControls"
+          class="control">
+        </configurator-control>
     </div>
 </div>
-

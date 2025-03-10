@@ -1,0 +1,201 @@
+﻿{
+	"database": [
+		{
+			"Control": [
+				{
+					"controlId": "control_1_1",
+					"controlSet": "control_1",
+					"controlInstance": "Control1",
+					"containerRef": "prot_1",
+					"title": "A CINEGE CIPŐJE",
+					"description": "Vége van a nyárnak, hűvös szelek járnak, nagy bánata van a cinegemadárnak.",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": "CINEGE, CIPŐ, NYÁR, BÁNAT"
+				},
+				{
+					"controlId": "control_1_2",
+					"controlSet": "control_1",
+					"controlInstance": "Control1",
+					"containerRef": "prot_1",
+					"title": "A CINEGE PAPUCSA",
+					"description": "Szeretne elmenni, ő is útra kelni. De cipőt az árva sehol se tud venni. Kapkod fűhöz-fához, szalad a vargához, fűzfahegyen lakó Varjú Varga Pálhoz.",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": "CINEGE, PAPUCS, ÚT"
+				},
+				{
+					"controlId": "control_1_3",
+					"controlSet": "control_1",
+					"controlInstance": "Control1",
+					"containerRef": "prot_1",
+					"title": "CIPŐJE A LÓNAK",
+					"description": "Kapkod fűhöz-fához, szalad a vargához, fűzfahegyen lakó Varjú Varga Pálhoz.",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": "LÓ, PAPUCS, CIPŐ, VARGA"
+				},
+				{
+					"controlId": "control_1_4",
+					"controlSet": "control_1",
+					"controlInstance": "Control1",
+					"containerRef": "prot_1",
+					"title": "PERGOLA CINEGE",
+					"description": "Azt mondja a varga, nem ér ő most arra, mert ő most a csizmát  nagyuraknak varrja. Darunak, gólyának, a bölömbikának,  kár, kár, kár, nem ilyen akárki fiának!",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": "CINEGE, PERGOLA, DARU, CSIZMA, BÁNAT"
+				},
+				{
+					"controlId": "control_1_5",
+					"controlSet": "control_1",
+					"controlInstance": "Control1",
+					"containerRef": "prot_1",
+					"title": "CIPŐ UNO",
+					"description": "Daru is, gólya is,  a bölömbika is, útra kelt azóta a búbos banka is.Daru is, gólya is, a bölömbika is, útra kelt azóta a búbos banka is. Daru is, gólya is, a bölömbika is, útra kelt azóta a búbos banka is.",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": "CINEGE, PAPUCS, ÚT, DARU, VIPŐ, UNO"
+				},
+				{
+					"controlId": "control_1_6",
+					"controlSet": "control_1",
+					"controlInstance": "Control1",
+					"containerRef": "prot_1",
+					"title": "PERGOLA CIPŐ",
+					"description": "Csak a cinegének  szomorú az ének:  nincsen cipőcskéje máig se szegénynek.  Keresi-kutatja,  repül gallyrul gallyra: \"Kis cipőt, kis cipőt!\" -  egyre csak azt hajtja. Csak a cingének  szomorú az ének:  nincsen cipőcskéje  máig se szegénynek.  Keresi-kutatja,  repül gallyrul gallyra:  \"Kis cipőt, kis cipőt!\" -  egyre csak azt hajtja. Csak a cingének  szomorú az ének:  nincsen cipőcskéje  máig se szegénynek.  Keresi-kutatja,  repül gallyrul gallyra:  \"Kis cipőt, kis cipőt!\" -  egyre csak azt hajtja. Csak a cingének  szomorú az ének:  nincsen cipőcskéje  máig se szegénynek.  Keresi-kutatja,  repül gallyrul gallyra:  \"Kis cipőt, kis cipőt!\" -  egyre csak azt hajtja. ",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": "CIPŐ, KUTAT, PERGOLA, GALLY"
+				},
+				{
+					"controlId": "control_2_1",
+					"controlSet": "control_2",
+					"controlInstance": "Control1",
+					"containerRef": "prot_2",
+					"title": "PERGOLA UNO",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_2_2",
+					"controlSet": "control_2",
+					"controlInstance": "Control1",
+					"containerRef": "prot_2",
+					"title": "PERGOLA UNO",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_2_3",
+					"controlSet": "control_2",
+					"controlInstance": "Control1",
+					"containerRef": "prot_2",
+					"title": "PERGOLA UNO",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_2_4",
+					"controlSet": "control_2",
+					"controlInstance": "Control1",
+					"containerRef": "prot_2",
+					"title": "PERGOLA UNO",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_2_5",
+					"controlSet": "control_2",
+					"controlInstance": "Control1",
+					"containerRef": "prot_2",
+					"title": "PERGOLA UNO",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_2_6",
+					"controlSet": "control_2",
+					"controlInstance": "Control1",
+					"containerRef": "prot_2",
+					"title": "PERGOLA UNO",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_3_1",
+					"controlSet": "control_3",
+					"controlInstance": "Control1",
+					"containerRef": "prot_3",
+					"title": "",
+					"description": "",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_3_2",
+					"controlSet": "control_3",
+					"controlInstance": "Control1",
+					"containerRef": "prot_3",
+					"title": "",
+					"description": "",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_3_3",
+					"controlSet": "control_3",
+					"controlInstance": "Control1",
+					"containerRef": "prot_3",
+					"title": "",
+					"description": "",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_3_4",
+					"controlSet": "control_3",
+					"controlInstance": "Control1",
+					"containerRef": "prot_3",
+					"title": "",
+					"description": "",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				},
+				{
+					"controlId": "control_3_5",
+					"controlSet": "control_3",
+					"controlInstance": "Control1",
+					"containerRef": "prot_3",
+					"title": "",
+					"description": "",
+					"imageRef": "assets/Rectangle.png",
+					"filterTags": ""
+				}
+			],
+			"Container": [
+				{
+					"id.container": "container_1",
+					"containerInstance": "container1",
+					"containerName": "Egyes",
+					"search": "false",
+					"filter": "false"
+				},
+				{
+					"id.container": "container_2",
+					"containerInstance": "container1",
+					"containerName": "Kettes",
+					"search": "false",
+					"filter": "false"
+				},
+				{
+					"id.container": "container_3",
+					"containerInstance": "container1",
+					"containerName": "Hármas",
+					"search": "false",
+					"filter": "false"
+				}
+			]
+		}
+	]
+}
