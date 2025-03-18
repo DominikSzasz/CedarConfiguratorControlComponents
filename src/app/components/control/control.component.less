@@ -6,8 +6,6 @@
 @img-divider-gap: 30px;
 @divider-title-gap: 20px;
 @title-text-gap: 15px;
-@content-width: 240px;
-@divider-width: 260px;
 @divider-height: 0.5px;
 @title-font: 'Noto Sans';
 @text-font: 'Noto Sans';
@@ -59,12 +57,30 @@
 
 
 ::ng-deep :root {
+    --control-width: @control-width;
+    --control-height: @control-height;
+    --top-margin: @top-margin;
+    --bottom-margin: @bottom-margin;
+    --side-margin: @side-margin;
+    --img-divider-gap: @img-divider-gap;
+    --divider-title-gap: @divider-title-gap;
+    --title-text-gap: @title-text-gap;
+    --divider-height: @divider-height;
+    --title-font: @title-font;
+    --text-font: @text-font;
+    --title-font-weight: @title-font-weight;
+    --text-font-weight: @text-font-weight;
+    --title-font-style: @title-font-style;
+    --text-font-style: @text-font-style;
+    --title-size: @title-size;
+    --text-size: @text-size;
+    
     --unselected-color: @unselected-color;
     --default-selected-color: @selected-color;
     --selected-color: @selected-color;
     --disabled-color: @disabled-color;
     --hover-color: @hover-color;
-    --clicked-color: @unselected-color;
+    --clicked-color: @clicked-color;
 
     --selected-border-color: @selected-border-color;
     --unselected-border-color: @unselected-border-color;
@@ -72,6 +88,8 @@
     --disabled-border-color: @disabled-border-color;
     --clicked-border-color: @clicked-border-color;
     --hover-border-color: @hover-border-color;
+    --default-border-width: @default-border-width;
+    --clicked-border-width: @clicked-border-width;
 
     --selected-title-color: @selected-title-color;
     --unselected-title-color: @unselected-title-color;
@@ -92,90 +110,90 @@
     --disabled-divider-color: @disabled-divider-color;
     --default-disabled-divider-color: @default-selected-divider-color;
     --clicked-divider-color: @clicked-divider-color;
-    --hovers-divider-color: @hover-divider-color;
+    --hover-divider-color: @hover-divider-color;
 }
   
 img {
     margin: 15px;
     width: 80%;
-    margin-bottom: @img-divider-gap;
+    margin-bottom: var(--img-divider-gap);
 }
 .control-hr {
     margin-top: 0;
     width: 80%;
-    height: @divider-height;
-    background-color: @unselected-divider-color;
+    background-color: var(--unselected-divider-color);
 }
 .control-card {
-    padding-top: @top-margin;
-    padding-bottom: @bottom-margin;
-    width: @control-width;
-    height: @control-height;
+    padding-top: var(--top-margin);
+    padding-bottom: var(--bottom-margin);
+    width: var(--control-width);
+    height: var(--control-height);
     overflow: auto;
-    background-color: @unselected-color;
-    border: @default-border-width solid @unselected-border-color;
-    
+    background-color: var(--unselected-color);
+    border: var(--default-border-width) solid var(--unselected-border-color);
+    box-sizing: border-box;
+
 }
 .control-card {
-    &:hover {
-      background-color: @hover-color;
-      border: @default-border-width solid @hover-border-color;
-      
-      .control-title {
-        color: @hover-title-color;
-      }
-      .control-text {
-        color: @hover-text-color;
-      }
-      .control-hr {
-        color: @hover-divider-color;
-      }
+  &:hover {
+    background-color: var(--hover-color) !important;
+    border: var(--default-border-width) solid var(--hover-border-color) !important;
+    
+    .control-title {
+      color: var(--hover-title-color) !important;
+    }
+    .control-text {
+      color: var(--hover-text-color) !important;
+    }
+    .control-hr {
+      color: var(--hover-divider-color) !important;
     }
   }
-  
+}
+
 .control-card {
-    &:active {
-      background-color: @clicked-color;
-      border: @clicked-border-width solid @clicked-border-color;
-      
-      .control-title {
-        color: @clicked-title-color;
-      }
-      .control-text {
-        color: @clicked-text-color;
-      }
-      .control-hr {
-        color: @clicked-divider-color;
-      }
-    }
+&:active {
+  background-color: var(--clicked-color) !important;
+  border: var(--clicked-border-width) solid var(--clicked-border-color) !important;
+  
+  .control-title {
+    color: var(--clicked-title-color) !important;
   }
+  .control-text {
+    color: var(--clicked-text-color) !important;
+  }
+  .control-hr {
+    color: var(--clicked-divider-color) !important;
+  }
+}
+}
   
 .control-img {
     text-align: center;
 }
 .control-title {
-    font-family: @title-font;
-    font-size: @title-size;
-    font-weight: @title-font-weight;
-    font-style: @title-font-style;
+    font-family: var(--title-font);
+    font-size: var(--title-size);
+    font-weight: var(--title-font-weight);
+    font-style: var(--title-font-style);
 
-    margin-top: @divider-title-gap;
+    margin-top: var(--divider-title-gap);
     margin-bottom: 0;
-    margin-left: @side-margin;
-    margin-right: @side-margin;
+    margin-left: var(--side-margin);
+    margin-right: var(--side-margin);
 
     width: 80%;
 }
 .control-text {
-    font-family: @text-font;
-    font-size: @text-size;
-    font-weight: @text-font-weight;
-    font-style: @text-font-style;
+    font-family: var(--text-font);
+    font-size: var(--text-size);
+    font-weight: var(--text-font-weight);
+    font-style: var(--text-font-style);
 
-    margin-top: @title-text-gap;
+    margin-top: var(--title-text-gap);
     margin-bottom: 0;
-    margin-left: @side-margin;
-    margin-right: @side-margin;
+    margin-left: var(--side-margin);
+    margin-right: var(--side-margin);
     
     width: 80%;
 }

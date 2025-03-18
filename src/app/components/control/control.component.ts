@@ -1,6 +1,6 @@
 import { Component, Input, ElementRef, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { getControlVars } from './control-setup';
 enum ControlStates {
   unselected,
   defaultSelected,
@@ -22,6 +22,7 @@ export class ControlComponent {
   @Input() cardTitle: string = "";
   @Input() cardText: string = "";
   @Input() cardId: string = "";
+  @Input() controlType: string = ""
   @Input() selectedControls: string[] = [];
   
   state: ControlStates = ControlStates.unselected;
@@ -29,6 +30,8 @@ export class ControlComponent {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
   
   ngOnInit() {
+    this.el.nativeElement.classList.add(this.controlType);
+    getControlVars(this.controlType);
     const controlCard = this.el.nativeElement.querySelector('.control-card');
     const controlTitle = this.el.nativeElement.querySelector('.control-title');
     const controlText = this.el.nativeElement.querySelector('.control-text');
@@ -74,7 +77,7 @@ export class ControlComponent {
       case ControlStates.selected:
         this.state = ControlStates.unselected;
         controlCard.style.backgroundColor = "var(--unselected-color)";
-        controlCard.style.borderColor = "var(--selected-border-color)";
+        controlCard.style.borderColor = "var(--unselected-border-color)";
         controlTitle.style.color = "var(--unselected-title-color)";
         controlText.style.color = "var(--unselected-text-color)";
         controlDivider.style.backgroundColor = "var(--unselected-divider-color)";
