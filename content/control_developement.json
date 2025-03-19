@@ -19,7 +19,7 @@
 					"containerRef": "prot_1",
 					"title": "A CINEGE PAPUCSA",
 					"description": "Szeretne elmenni, ő is útra kelni. De cipőt az árva sehol se tud venni. Kapkod fűhöz-fához, szalad a vargához, fűzfahegyen lakó Varjú Varga Pálhoz.",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "assets/widthtest.png",
 					"filterTags": "CINEGE, PAPUCS, ÚT"
 				},
 				{
@@ -29,7 +29,7 @@
 					"containerRef": "prot_1",
 					"title": "CIPŐJE A LÓNAK",
 					"description": "Kapkod fűhöz-fához, szalad a vargához, fűzfahegyen lakó Varjú Varga Pálhoz.",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "assets/heighttest.png",
 					"filterTags": "LÓ, PAPUCS, CIPŐ, VARGA"
 				},
 				{
@@ -39,7 +39,7 @@
 					"containerRef": "prot_1",
 					"title": "PERGOLA CINEGE",
 					"description": "Azt mondja a varga, nem ér ő most arra, mert ő most a csizmát  nagyuraknak varrja. Darunak, gólyának, a bölömbikának,  kár, kár, kár, nem ilyen akárki fiának!",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "assets/smalltest.png",
 					"filterTags": "CINEGE, PERGOLA, DARU, CSIZMA, BÁNAT"
 				},
 				{
