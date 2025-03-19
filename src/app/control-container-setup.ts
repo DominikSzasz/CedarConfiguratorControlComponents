@@ -31,8 +31,10 @@ export const paramLookupTable: Record<string, string> = {					"control_width": "
     "Filter tag-ek": ""
   };
   type ControlTypes = Record<string, Record<string, string>>;
+  type ProjGlob = Record<string, string>;
   export class Globals {
     static controlTypes: Partial<ControlTypes> = {};
+    static projGlob: ProjGlob = {};
   }
 
   export function setupControlContainer() {
@@ -47,4 +49,12 @@ export const paramLookupTable: Record<string, string> = {					"control_width": "
             }
         });
     });    
+}
+export function getProjGlobals()
+{
+        let projectGlobals = parameterDatabase.database[0].ProjectGlobals[0]
+        Globals.projGlob = {}
+        Object.entries(projectGlobals).forEach(([key, value]) => {
+            Globals.projGlob[key]! = value!
+        });
 }
