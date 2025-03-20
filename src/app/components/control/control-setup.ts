@@ -17,7 +17,8 @@ export function getControlVars(controlType: string) {
             });
             
             (element as HTMLElement).style.setProperty(cssVar, value, 'important');
-          }
+            console.log(cssVar + " = " + value)
+        }
         });
       });
     }

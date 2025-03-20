@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ControlComponent } from "./components/control/control.component";
 import { ControlContainerComponent } from "./components/control-container/control-container.component";
-import { getProjGlobals, setupControlContainer } from './control-container-setup';
+import { getProjGlobals, getControlTypes, getContainerTypes, Globals} from './control-container-setup';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, ControlComponent, ControlContainerComponent],
@@ -14,6 +14,8 @@ export class AppComponent {
   ngOnInit()
   {
     getProjGlobals()
-    setupControlContainer()
+    getControlTypes()
+    getContainerTypes()
+    console.log(Globals.containerTypes)
   }
 }

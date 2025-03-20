@@ -1,5 +1,5 @@
 import parameterDatabase from '../../content/parameter_control_container.json'
-export const paramLookupTable: Record<string, string> = {					"control_width": "",
+export const paramLookupTable: Record<string, string> = {
     "control width": "--control-width",
     "control height": "--control-height",
     "margót lent": "--bottom-margin",
@@ -30,15 +30,15 @@ export const paramLookupTable: Record<string, string> = {					"control_width": "
     "Description színét": "--unselected-title-color",
     "Filter tag-ek": ""
   };
-  type ControlTypes = Record<string, Record<string, string>>;
+  type ControlContainerTypes = Record<string, Record<string, string>>;
   type ProjGlob = Record<string, string>;
   export class Globals {
-    static controlTypes: Partial<ControlTypes> = {};
+    static controlTypes: Partial<ControlContainerTypes> = {};
+    static containerTypes: Partial<ControlContainerTypes> = {};
     static projGlob: ProjGlob = {};
   }
 
-  export function setupControlContainer() {
-    
+export function getControlTypes() {
     parameterDatabase.database[0].ControlDef.forEach((control) => {
         let controlSet:string = control["controlSet"]
         Globals.controlTypes[controlSet] = {}
@@ -46,6 +46,18 @@ export const paramLookupTable: Record<string, string> = {					"control_width": "
             if (value !== "" && paramLookupTable[key] !== undefined) {
                 let cssName:string = paramLookupTable[key]
                 Globals.controlTypes[controlSet]![cssName]! = value
+            }
+        });
+    });    
+}
+export function getContainerTypes() {
+    parameterDatabase.database[0].ContainerDef.forEach((container) => {
+        let controlSet:string = container["id.container"]
+        Globals.containerTypes[controlSet] = {}
+        Object.entries(container).forEach(([key, value]) => {
+            if (value !== "" && paramLookupTable[key] !== undefined) {
+                let cssName:string = paramLookupTable[key]
+                Globals.containerTypes[controlSet]![cssName]! = value
             }
         });
     });    

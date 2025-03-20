@@ -38,7 +38,7 @@
 					"van-e elválasztó vonal a kép és a title között": "",
 					"ha van akkor a kép és vonal távolságot": "",
 					"ha van akkor a vonal és a szöveg közti távolságot": "",
-					"vonal vastagságát": "",
+					"vonal vastagságát": "20px",
 					"title betűtípusát": "",
 					"title méretét": "",
 					"title stílusát (bold italic stb)": "",
