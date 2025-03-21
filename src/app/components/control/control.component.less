@@ -48,17 +48,21 @@
 @clicked-text-color: rgba(51, 67, 94, 1);
 @hover-text-color: rgba(51, 67, 94, 1);
 
-@unselected-divider-color: rgb(0, 255, 30);
+@unselected-divider-color: rgb(51, 94, 56);
 @selected-divider-color: rgba(51, 67, 94, 1);
 @disabled-divider-color: rgba(185, 185, 185, 1);
 @default-selected-divider-color: rgba(51, 67, 94, 1);
 @clicked-divider-color: rgba(51, 67, 94, 1);
 @hover-divider-color: rgba(51, 67, 94, 1);
 
+@control-img-width: 200px;
+@control-img-height: 200px;
 
 ::ng-deep :root {
     --control-width: @control-width;
     --control-height: @control-height;
+    --control-img-width: @control-img-width;
+    --control-img-height: @control-img-height;
     --top-margin: @top-margin;
     --bottom-margin: @bottom-margin;
     --side-margin: @side-margin;
@@ -171,8 +175,8 @@ img {
   
 .control-img {
     text-align: center;
-    width: 200px;
-    height: 200px;
+    width: var(--control-img-width);
+    height: var(--control-img-height);
     margin: auto;
     overflow: hidden;
     display: flex;

@@ -1,1 +1,5 @@
-<configurator-container/>
+<div>
+    <div *ngFor="let containerObj of containers">
+        <configurator-container [container]="containerObj"></configurator-container>
+    </div>
+</div>

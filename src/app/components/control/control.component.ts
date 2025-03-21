@@ -1,6 +1,6 @@
 import { Component, Input, ElementRef, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { getControlVars } from './control-setup';
+// import { getControlVars } from './control-setup';
 enum ControlStates {
   unselected,
   defaultSelected,
@@ -30,8 +30,8 @@ export class ControlComponent {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
   
   ngOnInit() {
-    this.el.nativeElement.classList.add(this.controlType);
-    getControlVars(this.controlType);
+    // this.el.nativeElement.classList.add(this.controlType);
+    // getControlVars(this.controlType);
     const controlCard = this.el.nativeElement.querySelector('.control-card');
     const controlTitle = this.el.nativeElement.querySelector('.control-title');
     const controlText = this.el.nativeElement.querySelector('.control-text');

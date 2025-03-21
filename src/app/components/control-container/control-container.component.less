@@ -3,15 +3,15 @@
 @title-font-weight: 400;
 @title-font-style: none;
 @title-font-color: black;
-@control-max-container-width: 1200px;
-@control-min-container-width: 250px;
-@control-max-container-height: 600px;
-@control-min-container-height: 500px;
-@control-top-margin: 25px;
-@control-bottom-margin: 25px;
-@control-side-margin: 25px;
-@control-gap-horizontal: 10px;
-@control-gap-vertical: 10px;
+@max-container-width: 1200px;
+@min-container-width: 250px;
+@max-container-height: 600px;
+@min-container-height: 500px;
+@top-margin: 25px;
+@bottom-margin: 25px;
+@side-margin: 25px;
+@gap-horizontal: 10px;
+@gap-vertical: 10px;
 @title-container-gap: 0px;
 @control-container-background-color: white;
 @title-font-color: black;
@@ -19,24 +19,50 @@
 @control-container-border-width: 4px;
 @display-orientation: center;
 
+::ng-deep :root {
+    --container-max-width: @max-container-width;
+    --container-max-height: @max-container-height;
+    --container-min-width: @min-container-width;
+    --container-min-height: @min-container-height;
+    --container-top-margin: @top-margin;
+    --container-bottom-margin: @bottom-margin;
+    --container-side-margin: @side-margin;
+    --control-gap-horizontal: @gap-horizontal;
+    --control-gap-vertical: @gap-vertical;
+    --container-background-color: @control-container-background-color;
+    --container-border-color: @control-container-border-color;
+    --container-border-width: @control-container-border-width;
+    --title-font: @title-font;
+    --title-size: @title-size;
+    --title-font-weight: @title-font-weight;
+    --title-font-color: @title-font-color;
+    --title-font-style: @title-font-style;
+    --display-orientation: @display-orientation;
+    
+}
+.inner-title {
+    margin-top: -25px;
+    padding-top: 0px;
+    width: 100%;
+}
 .control-container {
     display: flex;
     flex-wrap: wrap;
-    column-gap: @control-gap-horizontal;
-    row-gap: @control-gap-vertical;
+    column-gap: @gap-horizontal;
+    row-gap: @gap-vertical;
     border: @control-container-border-width solid @control-container-border-color;
     background-color: @control-container-background-color;
     justify-content: @display-orientation;
     align-content: baseline;
-    max-width: @control-max-container-width;
-    min-width: @control-min-container-width;
-    max-height: @control-max-container-height;
-    min-height: @control-min-container-height;
+    max-width: @max-container-width;
+    min-width: @min-container-width;
+    max-height: @max-container-height;
+    min-height: @min-container-height;
     overflow: auto;
-    padding-top: @control-top-margin;
-    padding-bottom: @control-bottom-margin;
-    padding-left: @control-side-margin;
-    padding-right: @control-side-margin;
+    padding-top: @top-margin;
+    padding-bottom: @bottom-margin;
+    padding-left: @side-margin;
+    padding-right: @side-margin;
     box-sizing: border-box;
 }
 

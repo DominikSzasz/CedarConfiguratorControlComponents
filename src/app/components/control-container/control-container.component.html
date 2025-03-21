@@ -1,15 +1,17 @@
 <div class="container">
+  <div class="outer-title">
     <h1 class="title">Container</h1>
+  </div>
     <div class="control-container">
-        <configurator-control 
-          *ngFor="let control of controlsData"
-          [cardImg]="control.imageRef"
-          [cardTitle]="control.title"
-          [cardText]="control.description"
-          [cardId]="control.controlId"
-          [controlType]="control.controlSet"
-          [selectedControls]="selectedControls"
-          class="control">
-        </configurator-control>
+      <div class="inner-title">
+        <h1 class="title">Container</h1>
+      </div>
+      <configurator-control
+    *ngFor="let control of container.controls"
+    [cardImg]="control.imageRef || 'assets/Rectangle.png'"
+    [cardTitle]="control.title || 'Untitled Control'"
+    [cardText]="control.description || 'No description'">
+    </configurator-control>
+        
     </div>
 </div>
