@@ -10,7 +10,8 @@
     *ngFor="let control of container.controls"
     [cardImg]="control.imageRef || 'assets/Rectangle.png'"
     [cardTitle]="control.title || 'Untitled Control'"
-    [cardText]="control.description || 'No description'">
+    [cardText]="control.description || 'No description'"
+    [controlType]="control.controlSet || 'controlERR'">
     </configurator-control>
         
     </div>

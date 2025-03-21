@@ -144,7 +144,7 @@ export function getProjGlobals()
         let projectGlobals = parameterDatabase.database[0].ProjectGlobals[0]
         GlobalValues.projGlob = {}
         Object.entries(projectGlobals).forEach(([key, value]) => {
-            // GlobalValues.projGlob[key]! = value!
-            console.log(key, value)
+            GlobalValues.projGlob[key]! = value!
+            // console.log(key, value)
         });
 }

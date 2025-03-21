@@ -23,7 +23,7 @@
 			"ControlDef": [
 				{
 					"controlSet": "control_1",
-					"controlBoxWidth": "",
+					"controlBoxWidth": "350px",
 					"controlBoxHeight": "",
 					"controlBoxMargin_bottom": "",
 					"controlBoxMargin_top": "",
@@ -169,7 +169,7 @@
 					"controlBoxBorderColor_clicked": "",
 					"controlBoxBorderColor_defaultSelected": "",
 					"controlBoxBorderColor_hover": "",
-					"controlBoxBackgroundColor_default": "",
+					"controlBoxBackgroundColor_default": "#313131",
 					"controlBoxBackgroundColor_selected": "",
 					"controlBoxBackgroundColor_disabled": "",
 					"controlBoxBackgroundColor_clicked": "",
