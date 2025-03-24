@@ -4,7 +4,6 @@ import {GlobalValues} from '../../../app/control-container-setup'
 export function getControlVars(controlType: string) {    
     const elements = document.getElementsByClassName(controlType);
     const styles = GlobalValues.controlTypes[controlType];
-    console.log(GlobalValues.controlTypes)
 
     if (styles) {
         
@@ -20,7 +19,6 @@ export function getControlVars(controlType: string) {
             });
             
             (element as HTMLElement).style.setProperty(cssVar, value, 'important');
-            console.log(cssVar + " = " + value)
         }
         });
       });

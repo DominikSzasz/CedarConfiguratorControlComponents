@@ -58,51 +58,51 @@ export const controlParamLookupTable: Record<string, string> = {
 };
 
 export const containerParamLookupTable: Record<string, string> = {
-    "containerWidth_default": "",
-    "containerWidth_min": "--container-min-width",
-    "containerWidth_max": "--container-max-width",
-    "containerHeight_default": "",
-    "containerHeight_min": "--container-min-height",
-    "containerHeight_max": "--container-max-height",
-    "containerMargin_top": "--container-top-margin",
-    "containerMargin_bottom": "--container-bottom-margin",
-    "containerMargin_left": "--container-side-margin",
-    "containerMargin_right": "--container-side-margin",
-    "containerControlGap_horizontal": "--control-gap-horizontal",
-    "containerControlGap_vertical": "--control-gap-vertical",
-    "containerBackground_color": "--container-background-color",
-    "containerBorder_color": "--container-border-color",
-    "containerBorder_thickness": "--container-border-width",
-    "containerGap_title": "",
-    "containerDivider_TF": "",
-    "containerDivider_thickness": "",
-    "containerDivider_color": "",
-    "containerGap_title_divider": "",
-    "containerControlOrientation": "--display-orientation",
-    "containerTitle_fontStyle": "--title-font-style",
-    "containerTitle_font": "--title-font",
-    "containerTitle_size": "--title-size",
-    "containerTitle_weight": "--title-font-weight",
-    "containerTitle_color": "--title-font-color",
-    "containerScrollable_TF": "",
-    "containerSearch_TF": "",
-    "containerFilter_TF": "",
-    "ContainerControllType": "",
-    "containerGapSide_filter": "",
-    "containerGapSide_search": "",
-    "containerGap_search_filter": "",
-    "containerGapTop_searchFilter": "",
-    "containerSelectedFilter_color": "",
-    "containerNotSelectedFilter_color": "",
-    "containerSearchFilterBackground_color": "",
-    "containerSearchText1_color": "",
-    "containerSearchText2_color": "",
-    "containerSearchText1_font": "",
-    "containerSearchText2_font": "",
-    "containerSearchText1_size": "",
-    "containerSearchText2_size": "",
-    "containerSearchText1_weight": "",
-    "containerSearchText2_weight": ""
+        "containerWidth_default": "",
+        "containerWidth_min": "--container-min-width",
+        "containerWidth_max": "--container-max-width",
+        "containerHeight_default": "",
+        "containerHeight_min": "--container-min-height",
+        "containerHeight_max": "--container-max-height",
+        "containerMargin_top": "--container-top-margin",
+        "containerMargin_bottom": "--container-bottom-margin",
+        "containerMargin_left": "--container-side-margin",
+        "containerMargin_right": "--container-side-margin",
+        "containerControlGap_horizontal": "--control-gap-horizontal",
+        "containerControlGap_vertical": "--control-gap-vertical",
+        "containerBackground_color": "--container-background-color",
+        "containerBorder_color": "--container-border-color",
+        "containerBorder_thickness": "--container-border-width",
+        "containerGap_title": "--title-container-gap",
+        "containerDivider_TF": "",
+        "containerDivider_thickness": "",
+        "containerDivider_color": "",
+        "containerGap_title_divider": "",
+        "containerControlOrientation": "--display-orientation",
+        "containerTitle_fontStyle": "--title-font-style",
+        "containerTitle_font": "--title-font",
+        "containerTitle_size": "--title-size",
+        "containerTitle_weight": "--title-font-weight",
+        "containerTitle_color": "--title-font-color",
+        "containerScrollable_TF": "",
+        "containerSearch_TF": "",
+        "containerFilter_TF": "",
+        "ContainerControllType": "",
+        "containerGapSide_filter": "",
+        "containerGapSide_search": "",
+        "containerGap_search_filter": "",
+        "containerGapTop_searchFilter": "",
+        "containerSelectedFilter_color": "",
+        "containerNotSelectedFilter_color": "",
+        "containerSearchFilterBackground_color": "",
+        "containerSearchText1_color": "",
+        "containerSearchText2_color": "",
+        "containerSearchText1_font": "",
+        "containerSearchText2_font": "",
+        "containerSearchText1_size": "",
+        "containerSearchText2_size": "",
+        "containerSearchText1_weight": "",
+        "containerSearchText2_weight": ""    
 }
 
   type ControlContainerTypes = Record<string, Record<string, string>>;
@@ -126,19 +126,19 @@ export function getControlTypes() {
         });
     });    
 }
-// export function getContainerTypes() {
-//     parameterDatabase.database[0].ContainerDef.forEach((container) => {
-//         let controlSet:string = container["id.container"]
-//         GlobalValues.containerTypes[controlSet] = {}
-//         Object.entries(container).forEach(([key, value]) => {
-//             if (value !== "" && paramLookupTable[key] !== undefined) {
-//                 let cssName:string = paramLookupTable[key]
-//                 GlobalValues.containerTypes[controlSet]![cssName]! = value
-//             }
-//         });
-//     });  
-//     console.log(Globals.containerTypes)  
-// }
+export function getContainerTypes() {
+    parameterDatabase.database[0].ContainerDef.forEach((container) => {
+        let controlSet:string = container["containerId"]
+        GlobalValues.containerTypes[controlSet] = {}
+        Object.entries(container).forEach(([key, value]) => {
+            if (value !== "" && containerParamLookupTable[key] !== undefined) {
+                let cssName:string = containerParamLookupTable[key]
+                GlobalValues.containerTypes[controlSet]![cssName]! = value
+            }
+        });
+    });  
+    // console.log(GlobalValues.containerTypes)  
+}
 export function getProjGlobals()
 {
         let projectGlobals = parameterDatabase.database[0].ProjectGlobals[0]

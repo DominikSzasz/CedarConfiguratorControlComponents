@@ -7,7 +7,7 @@ import { ControlContainerComponent } from "./components/control-container/contro
 import controlDatabase from "../../content/control_developement.json";
 import { getContainers } from './CreateControlAndContainer';
 import { Globals, Container } from './CreateControlAndContainer';
-import { getControlTypes, getProjGlobals, GlobalValues } from './control-container-setup';
+import { getControlTypes, getProjGlobals, getContainerTypes } from './control-container-setup';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, ControlComponent, ControlContainerComponent, CommonModule],
@@ -24,5 +24,6 @@ export class AppComponent implements OnInit {
     this.containers = [...Globals.containers];
     getProjGlobals();
     getControlTypes();
+    getContainerTypes();
   }
 }

@@ -29,7 +29,7 @@ export class ControlComponent {
   
   constructor(private el: ElementRef, private renderer: Renderer2) {}
   
-  ngOnInit() {
+  ngAfterViewInit() {
     this.el.nativeElement.classList.add(this.controlType);
     getControlVars(this.controlType);
     const controlCard = this.el.nativeElement.querySelector('.control-card');

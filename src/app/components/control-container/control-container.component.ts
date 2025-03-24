@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ControlComponent } from "../control/control.component";
 // import { getContainerVars } from './container-setup';
 import { Container, Control } from '../../CreateControlAndContainer';
+import { getContainerVars } from './container-setup';
 @Component({
   selector: 'configurator-container',
   standalone: true,
@@ -23,9 +24,13 @@ export class ControlContainerComponent {
   };
   
   ngOnInit() {
-
-    // Use Renderer2 instead of direct DOM manipulation
-    setTimeout(() => { // Wait for view to render
+    this.el.nativeElement.classList.add(this.container.containerId);
+    getContainerVars(this.container.containerId!);
+  }
+  
+  ngAfterViewInit() {
+    setTimeout(() => {
+      
       const innerTitle = this.el.nativeElement.querySelector('.inner-title');
       const outerTitle = this.el.nativeElement.querySelector('.outer-title');
       
@@ -38,9 +43,9 @@ export class ControlContainerComponent {
           this.renderer.setStyle(outerTitle, 'display', 'block');
         }
       }
+
     });
   }
-  
   // selectedControls: string[] = [];
   
-  }
+}
