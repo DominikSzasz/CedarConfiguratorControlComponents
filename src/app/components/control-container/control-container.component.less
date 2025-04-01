@@ -27,12 +27,19 @@
     --container-background-color: white;
     --container-border-color: black;
     --container-border-width: 4px;
+    --inner-title-divider-height: 1px;
+    --inner-title-divider-color: black;
 }
 
 .inner-title {
     margin-top: -25px;
     padding-top: 0px;
     width: 100%;
+}
+.inner-title-divider {
+    height: var(--inner-title-divider-height);
+    background-color: var(--inner-title-divider-color);
+    border: none;
 }
 .control-container {
     display: flex;
