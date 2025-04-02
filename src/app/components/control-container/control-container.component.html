@@ -8,11 +8,14 @@
         <hr class="inner-title-divider">
       </div>
       <configurator-control
-    *ngFor="let control of container.controls"
+    *ngFor="let control of container.controls; let i = index"
     [cardImg]="control.imageRef || 'assets/Rectangle.png'"
     [cardTitle]="control.title || 'Untitled Control'"
     [cardText]="control.description || 'No description'"
-    [controlType]="control.controlSet || 'controlERR'">
+    [controlType]="control.controlSet || 'controlERR'"
+    [controlId]="control.controlId || 'controlId'"
+    (changeSelected)="changeSelected(i)"
+    >
     </configurator-control>
         
     </div>

@@ -1,7 +1,7 @@
-import { Component, Input, ElementRef, Renderer2 } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { getControlVars } from './control-setup';
-enum ControlStates {
+export enum ControlStates {
   unselected,
   defaultSelected,
   selected,
@@ -21,10 +21,11 @@ export class ControlComponent {
   @Input() cardImg: string = "";
   @Input() cardTitle: string = "";
   @Input() cardText: string = "";
-  @Input() cardId: string = "";
+  @Input() controlId: string = "";
   @Input() controlType: string = ""
   @Input() selectedControls: string[] = [];
-  
+  @Output() changeSelected: EventEmitter<void> = new EventEmitter();
+
   state: ControlStates = ControlStates.unselected;
   
   constructor(private el: ElementRef, private renderer: Renderer2) {}
@@ -53,41 +54,34 @@ export class ControlComponent {
     }
   }
   
-  changeColor() {
+  changeState(selectionState: ControlStates) {
     const controlCard = this.el.nativeElement.querySelector('.control-card');
     const controlTitle = this.el.nativeElement.querySelector('.control-title');
     const controlText = this.el.nativeElement.querySelector('.control-text');
     const controlDivider = this.el.nativeElement.querySelector('.control-hr');
     
-    switch (this.state) {
-      case ControlStates.unselected:
+    switch (selectionState) {
+      case ControlStates.selected:
         this.state = ControlStates.selected;
         controlCard.style.backgroundColor = "var(--selected-color)";
         controlCard.style.borderColor = "var(--selected-border-color)";
         controlTitle.style.color = "var(--selected-title-color)";
         controlText.style.color = "var(--selected-text-color)";
         controlDivider.style.backgroundColor = "var(--selected-divider-color)";
-        
-        if (!this.selectedControls.includes(this.cardId)) {
-          this.selectedControls.push(this.cardId);
-        }
-        console.log('Selected:', this.selectedControls);
         break;
         
-      case ControlStates.selected:
+      case ControlStates.unselected:
         this.state = ControlStates.unselected;
         controlCard.style.backgroundColor = "var(--unselected-color)";
         controlCard.style.borderColor = "var(--unselected-border-color)";
         controlTitle.style.color = "var(--unselected-title-color)";
         controlText.style.color = "var(--unselected-text-color)";
         controlDivider.style.backgroundColor = "var(--unselected-divider-color)";
-        
-        const index = this.selectedControls.indexOf(this.cardId);
-        if (index !== -1) {
-          this.selectedControls.splice(index, 1);
-        }
-        console.log('Selected:', this.selectedControls);
         break;
     }
+  }
+  selectControl()
+  {
+    this.changeSelected.emit()
   }
 }

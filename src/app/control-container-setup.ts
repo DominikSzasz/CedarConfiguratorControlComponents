@@ -137,7 +137,6 @@ export function getContainerTypes() {
             }
         });
     });  
-    // console.log(GlobalValues.containerTypes)  
 }
 export function getProjGlobals()
 {
@@ -145,6 +144,5 @@ export function getProjGlobals()
         GlobalValues.projGlob = {}
         Object.entries(projectGlobals).forEach(([key, value]) => {
             GlobalValues.projGlob[key]! = value!
-            // console.log(key, value)
         });
 }

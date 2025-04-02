@@ -18,8 +18,6 @@ export function getContainerVars(containerId: string) {
             });
             
             (element as HTMLElement).style.setProperty(cssVar, value, 'important');
-            // (element as HTMLElement).style.backgroundColor = "blue"
-            // console.log(containerId, cssVar, value)
         }
         });
       });

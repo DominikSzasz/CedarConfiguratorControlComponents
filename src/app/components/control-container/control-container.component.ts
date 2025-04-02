@@ -1,7 +1,6 @@
-import { Component, Input, ElementRef, Renderer2 } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2, ViewChildren, QueryList } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ControlComponent } from "../control/control.component";
-// import { getContainerVars } from './container-setup';
+import { ControlComponent, ControlStates } from "../control/control.component";
 import { Container, Control } from '../../CreateControlAndContainer';
 import { getContainerVars } from './container-setup';
 @Component({
@@ -14,6 +13,10 @@ import { getContainerVars } from './container-setup';
 export class ControlContainerComponent {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
+  @ViewChildren(ControlComponent) children!: QueryList<ControlComponent>;
+  controlArray: ControlComponent[] = [];
+    
+
   @Input() titleInContainer:boolean = false
   @Input() container: Container = {
     containerId: '',
@@ -23,9 +26,11 @@ export class ControlContainerComponent {
     controls: []
   };
   
+
   ngOnInit() {
     this.el.nativeElement.classList.add(this.container.containerId);
     getContainerVars(this.container.containerId!);
+    
   }
   
   ngAfterViewInit() {
@@ -43,9 +48,17 @@ export class ControlContainerComponent {
           this.renderer.setStyle(outerTitle, 'display', 'block');
         }
       }
-
+      this.controlArray = this.children.toArray();
     });
   }
-  // selectedControls: string[] = [];
-  
+  selectedControl: string = "";
+  changeSelected(index: number)
+  {
+    for (let i = 0; i < this.controlArray.length; i++) {
+      this.controlArray[i].changeState(ControlStates.unselected)
+    }
+    this.controlArray[index].changeState(ControlStates.selected)
+    this.selectedControl = this.controlArray[index].controlId
+    console.log("selected: " + this.selectedControl)
+  }
 }

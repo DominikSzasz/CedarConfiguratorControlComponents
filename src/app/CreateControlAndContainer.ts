@@ -42,5 +42,4 @@ export function getContainers()
             }
         });
     }); 
-    // console.log(Globals.containers)
 }
