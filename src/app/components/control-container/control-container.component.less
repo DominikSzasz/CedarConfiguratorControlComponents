@@ -21,7 +21,8 @@
     --container-min-height: 500px;
     --container-top-margin: 25px;
     --container-bottom-margin: 25px;
-    --container-side-margin: 25px;
+    --container-left-margin: 25px;
+    --container-right-margin: 25px;
     --control-gap-horizontal: 10px;
     --control-gap-vertical: 10px;
     --container-background-color: white;
@@ -44,8 +45,8 @@
 .control-container {
     display: flex;
     flex-wrap: wrap;
-    column-gap: var(--gap-horizontal);
-    row-gap: var(--gap-vertical);
+    column-gap: var(--control-gap-horizontal);
+    row-gap: var(--control-gap-vertical);
     border: var(--container-border-width) solid var(--container-border-color);
     background-color: var(--container-background-color);
     justify-content: var(--display-orientation);
@@ -55,10 +56,10 @@
     max-height: var(--container-max-height);
     min-height: var(--container-min-height);
     overflow: auto;
-    padding-top: var(--top-margin);
-    padding-bottom: var(--bottom-margin);
-    padding-left: var(--side-margin);
-    padding-right: var(--side-margin);
+    padding-top: var(--container-top-margin);
+    padding-bottom: var(--container-bottom-margin);
+    padding-left: var(--container-left-margin);
+    padding-right: var(--container-right-margin);
     box-sizing: border-box;
 }
 .title {

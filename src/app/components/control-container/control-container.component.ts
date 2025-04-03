@@ -34,7 +34,7 @@ export class ControlContainerComponent {
   }
   
   ngAfterViewInit() {
-    setTimeout(() => {
+    // setTimeout(() => {
       
       const innerTitle = this.el.nativeElement.querySelector('.inner-title');
       const outerTitle = this.el.nativeElement.querySelector('.outer-title');
@@ -49,7 +49,7 @@ export class ControlContainerComponent {
         }
       }
       this.controlArray = this.children.toArray();
-    });
+    // });
   }
   selectedControl: string = "";
   changeSelected(index: number)
