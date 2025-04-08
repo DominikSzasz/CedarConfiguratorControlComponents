@@ -9,7 +9,7 @@ export const controlParamLookupTable: Record<string, string> = {
     "controlBoxPicture_TF": "",
     "controlBoxPicturePlaceholderWidth": "--control-img-width",
     "controlBoxPicturePlaceholderHeight": "--control-img-height",
-    "controlBoxDivider_TF": "",
+    "controlBoxDivider_TF": "divider-tf",
     "controlBoxGap_picture_title": "--img-dvider-gap",
     "controlBoxGap_title_text": "--title-text-gap",
     "controlBoxGap_picture_divider": "--img-dvider-gap",

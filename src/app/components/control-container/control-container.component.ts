@@ -1,12 +1,14 @@
-import { Component, Input, ElementRef, Renderer2, ViewChildren, QueryList } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2, ViewChildren, QueryList, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlComponent, ControlStates } from "../control/control.component";
 import { Container, Control } from '../../CreateControlAndContainer';
 import { getContainerVars } from './container-setup';
+import { FilterBarComponent } from "../../filter-bar/filter-bar.component";
+import { SearchBarComponent } from '../../search-bar/search-bar.component';
 @Component({
   selector: 'configurator-container',
   standalone: true,
-  imports: [ControlComponent, CommonModule],
+  imports: [ControlComponent, CommonModule, FilterBarComponent, SearchBarComponent],
   templateUrl: './control-container.component.html',
   styleUrl: './control-container.component.less'
 })
@@ -17,7 +19,6 @@ export class ControlContainerComponent {
   controlArray: ControlComponent[] = [];
     
 
-  @Input() titleInContainer:boolean = false
   @Input() container: Container = {
     containerId: '',
     containerInstance: '',
@@ -25,31 +26,18 @@ export class ControlContainerComponent {
     filter: false,
     controls: []
   };
-  
+  @Input() containerDivider: boolean = false
+  @Input() containerTitleInside: boolean = false
+  @Input() containerTitle: string = ""
 
   ngOnInit() {
     this.el.nativeElement.classList.add(this.container.containerId);
     getContainerVars(this.container.containerId!);
-    
+    console.log(this.containerTitleInside)
   }
   
   ngAfterViewInit() {
-    // setTimeout(() => {
-      
-      const innerTitle = this.el.nativeElement.querySelector('.inner-title');
-      const outerTitle = this.el.nativeElement.querySelector('.outer-title');
-      
-      if (innerTitle && outerTitle) {
-        if (this.titleInContainer) {
-          this.renderer.setStyle(outerTitle, 'display', 'none');
-          this.renderer.setStyle(innerTitle, 'display', 'block');
-        } else {
-          this.renderer.setStyle(innerTitle, 'display', 'none');
-          this.renderer.setStyle(outerTitle, 'display', 'block');
-        }
-      }
       this.controlArray = this.children.toArray();
-    // });
   }
   selectedControl: string = "";
   changeSelected(index: number)

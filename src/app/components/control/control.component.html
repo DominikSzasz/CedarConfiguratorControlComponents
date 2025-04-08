@@ -3,7 +3,7 @@
         <div class="control-img">
             <img src={{cardImg}} alt="Image">
         </div>
-        <hr class="control-hr">
+        <hr *ngIf="dividerTF" class="control-hr">
         <h1 class="control-title">{{cardTitle}}</h1>
         <p class="control-text">{{cardText}}</p>
     </div>

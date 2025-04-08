@@ -24,6 +24,7 @@ export class ControlComponent {
   @Input() controlId: string = "";
   @Input() controlType: string = ""
   @Input() selectedControls: string[] = [];
+  @Input() dividerTF: boolean = false;
   @Output() changeSelected: EventEmitter<void> = new EventEmitter();
 
   state: ControlStates = ControlStates.unselected;

@@ -9,7 +9,7 @@
 					"containerRef": "container_1",
 					"title": "A CINEGE CIPŐJE",
 					"description": "Vége van a nyárnak, hűvös szelek járnak, nagy bánata van a cinegemadárnak.",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": "CINEGE, CIPŐ, NYÁR, BÁNAT"
 				},
 				{
@@ -19,7 +19,7 @@
 					"containerRef": "container_1",
 					"title": "A CINEGE PAPUCSA",
 					"description": "Szeretne elmenni, ő is útra kelni. De cipőt az árva sehol se tud venni. Kapkod fűhöz-fához, szalad a vargához, fűzfahegyen lakó Varjú Varga Pálhoz.",
-					"imageRef": "assets/widthtest.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": "CINEGE, PAPUCS, ÚT"
 				},
 				{
@@ -29,7 +29,7 @@
 					"containerRef": "container_1",
 					"title": "CIPŐJE A LÓNAK",
 					"description": "Kapkod fűhöz-fához, _x000B_szalad a vargához, _x000B_fűzfahegyen lakó _x000B_Varjú Varga Pálhoz.",
-					"imageRef": "assets/heighttest.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": "LÓ, PAPUCS, CIPŐ, VARGA"
 				},
 				{
@@ -39,7 +39,7 @@
 					"containerRef": "container_1",
 					"title": "PERGOLA CINEGE",
 					"description": "Azt mondja a varga, nem ér ő most arra, mert ő most a csizmát  nagyuraknak varrja. Darunak, gólyának, a bölömbikának,  kár, kár, kár, nem ilyen akárki fiának!",
-					"imageRef": "assets/smalltest.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": "CINEGE, PERGOLA, DARU, CSIZMA, BÁNAT"
 				},
 				{
@@ -49,7 +49,7 @@
 					"containerRef": "container_1",
 					"title": "CIPŐ UNO",
 					"description": "Daru is, gólya is,  a bölömbika is, útra kelt azóta a búbos banka is.Daru is, gólya is, a bölömbika is, útra kelt azóta a búbos banka is. Daru is, gólya is, a bölömbika is, útra kelt azóta a búbos banka is.",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": "CINEGE, PAPUCS, ÚT, DARU, VIPŐ, UNO"
 				},
 				{
@@ -59,7 +59,7 @@
 					"containerRef": "container_1",
 					"title": "PERGOLA CIPŐ",
 					"description": "Csak a cinegének  szomorú az ének:  nincsen cipőcskéje máig se szegénynek.  Keresi-kutatja,  repül gallyrul gallyra:  - Kis cipőt, kis cipőt! -  -  egyre csak azt hajtja. Csak a cingének  szomorú az ének:  nincsen cipőcskéje  máig se szegénynek.  Keresi-kutatja,  repül gallyrul gallyra:   - Kis cipőt, kis cipőt! -  -  egyre csak azt hajtja. Csak a cingének  szomorú az ének:  nincsen cipőcskéje  máig se szegénynek.  Keresi-kutatja,  repül gallyrul gallyra:   - Kis cipőt, kis cipőt! -  -  egyre csak azt hajtja. Csak a cingének  szomorú az ének:  nincsen cipőcskéje  máig se szegénynek.  Keresi-kutatja,  repül gallyrul gallyra:   - Kis cipőt, kis cipőt! -  -  egyre csak azt hajtja. ",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": "CIPŐ, KUTAT, PERGOLA, GALLY"
 				},
 				{
@@ -69,7 +69,7 @@
 					"containerRef": "container_2",
 					"title": "PERGOLA UNO",
 					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -79,7 +79,7 @@
 					"containerRef": "container_2",
 					"title": "PERGOLA UNO",
 					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -89,7 +89,7 @@
 					"containerRef": "container_2",
 					"title": "PERGOLA UNO",
 					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -99,7 +99,7 @@
 					"containerRef": "container_2",
 					"title": "PERGOLA UNO",
 					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -109,7 +109,7 @@
 					"containerRef": "container_2",
 					"title": "PERGOLA UNO",
 					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -119,7 +119,7 @@
 					"containerRef": "container_2",
 					"title": "PERGOLA UNO",
 					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -129,7 +129,7 @@
 					"containerRef": "container_3",
 					"title": "",
 					"description": "",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -139,7 +139,7 @@
 					"containerRef": "container_3",
 					"title": "",
 					"description": "",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -149,7 +149,7 @@
 					"containerRef": "container_3",
 					"title": "",
 					"description": "",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -159,7 +159,7 @@
 					"containerRef": "container_3",
 					"title": "",
 					"description": "",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				},
 				{
@@ -169,7 +169,7 @@
 					"containerRef": "container_3",
 					"title": "",
 					"description": "",
-					"imageRef": "assets/Rectangle.png",
+					"imageRef": "./assets/Rectangle.png",
 					"filterTags": ""
 				}
 			],

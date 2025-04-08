@@ -31,9 +31,18 @@
     --inner-title-divider-height: 1px;
     --inner-title-divider-color: black;
 }
-
+.filter-container {
+    width: 100%;
+}
+.search-container {
+    width: 100%;
+    margin-left: 25px;
+}
 .inner-title {
-    margin-top: -25px;
+    padding-top: 0px;
+    width: 100%;
+}
+.outer-title {
     padding-top: 0px;
     width: 100%;
 }
@@ -58,12 +67,12 @@
     overflow: auto;
     padding-top: var(--container-top-margin);
     padding-bottom: var(--container-bottom-margin);
-    padding-left: var(--container-left-margin);
-    padding-right: var(--container-right-margin);
+    padding-left: var(--scontainer-ide-margin);
+    padding-right: var(--container-side-margin);
     box-sizing: border-box;
 }
 .title {
-    margin-bottom: var(--title-container-gap);
+    margin-top: var(--title-container-gap);
     font-family: var(--title-font);
     font-size: var(--title-size);
     font-weight: var(--title-font-weight);

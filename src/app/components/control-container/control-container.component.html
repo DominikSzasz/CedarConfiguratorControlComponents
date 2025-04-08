@@ -1,12 +1,20 @@
 <div class="container">
-  <div class="outer-title">
-    <h1 class="title">Container</h1>
+  <div class="outer-title" *ngIf="!containerTitleInside">
+    <h1 class="title">{{containerTitle}}</h1>
+    <hr *ngIf="containerDivider" class="inner-title-divider">
   </div>
     <div class="control-container">
-      <div class="inner-title">
-        <h1 class="title">Container</h1>
-        <hr class="inner-title-divider">
+      <div class="inner-title"  *ngIf="containerTitleInside">
+        <h1 class="title">{{containerTitle}}</h1>
+        <hr *ngIf="containerDivider" class="inner-title-divider">
       </div>
+      <div class="search-container">
+        <search-bar />
+      </div>
+      <div class="filter-container">
+        <filter-bar />
+      </div>
+
       <configurator-control
     *ngFor="let control of container.controls; let i = index"
     [cardImg]="control.imageRef || ''"
@@ -15,6 +23,7 @@
     [controlType]="control.controlSet || ''"
     [controlId]="control.controlId || ''"
     (changeSelected)="changeSelected(i)"
+    [dividerTF] = "control.divider || false"
     >
     </configurator-control>
         
