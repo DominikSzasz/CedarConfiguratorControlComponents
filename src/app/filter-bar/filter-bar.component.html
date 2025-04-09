@@ -1,24 +1,24 @@
 <div class="container">
     <div class="filter-container">
-        <filter-tag filterName="filter 1" />
-        <filter-tag filterName="filter 2" />
-        <filter-tag filterName="Name for a filter" />
-        <filter-tag filterName="filter 3" />
-        <filter-tag filterName="filter 3" />
-        <filter-tag filterName="some sort of filter" />
-        <filter-tag filterName="filter 3" />
-        <filter-tag filterName="The best filter" />
-        <filter-tag filterName="filter 3" />
-        <filter-tag filterName="filter" />
-        <filter-tag filterName="This is a filter" />
-        <filter-tag filterName="filter 3" />
-        <filter-tag filterName="filter 3" />
-        <filter-tag filterName="filter" />
-        <filter-tag filterName="random name" />
+        <filter-tag filterName="filter 1" [selected]="selected"/>
+        <filter-tag filterName="filter 2" [selected]="selected" />
+        <filter-tag filterName="Name for a filter" [selected]="selected" />
+        <filter-tag filterName="filter 3" [selected]="selected" />
+        <filter-tag filterName="filter 3" [selected]="selected" />
+        <filter-tag filterName="some sort of filter" [selected]="selected" />
+        <filter-tag filterName="filter 3" [selected]="selected" />
+        <filter-tag filterName="The best filter" [selected]="selected" />
+        <filter-tag filterName="filter 3" [selected]="selected" />
+        <filter-tag filterName="filter" [selected]="selected" />
+        <filter-tag filterName="This is a filter" [selected]="selected" />
+        <filter-tag filterName="filter 3" [selected]="selected" />
+        <filter-tag filterName="filter 3" [selected]="selected" />
+        <filter-tag filterName="filter" [selected]="selected" />
+        <filter-tag filterName="random name" [selected]="selected" />
         
     </div>
     <div class="button-container">
-        <div class="button">Select All</div>
+        <div class="button" (click)="displayselected()">Select All</div>
         <div class="button">Clear All Filters</div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { FilterTagComponent } from "../filter-tag/filter-tag.component";
 
 @Component({
@@ -8,5 +8,9 @@ import { FilterTagComponent } from "../filter-tag/filter-tag.component";
   styleUrl: './filter-bar.component.less'
 })
 export class FilterBarComponent {
+selected:string[] = []
+displayselected() {
+  console.log(this.selected)
+}
 
 }
