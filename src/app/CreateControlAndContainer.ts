@@ -12,6 +12,7 @@ export interface Control {
     imageRef?: string;
     filterTags?: string;
     divider?: boolean;
+    tags?: string;
 }
 export interface Container {
     containerName?: string;
@@ -22,6 +23,7 @@ export interface Container {
     controls: Control[];
     divider?: boolean;
     titleInside?: boolean;
+    tags?: string[];
 }
 export class Globals {
     static containers: Container[] = []
@@ -52,7 +54,7 @@ export function getContainers()
         {
             titleInside = false
         }
-        Globals.containers[containerIndex] = {containerId: container.containerId, controls: [], divider: containerDivider, titleInside: titleInside, containerName: containerName}
+        Globals.containers[containerIndex] = {containerId: container.containerId, controls: [], divider: containerDivider, titleInside: titleInside, containerName: containerName, tags: []}
         controlContainerDatabase.database[0].Control.forEach((control, controlIndex) => {
 
             if (control.containerRef === container.containerId) {
@@ -79,10 +81,23 @@ export function getContainers()
                     imageRef: control.imageRef,
                     description: control.description,
                     filterTags: control.filterTags,
-                    divider: dividerTF
+                    divider: dividerTF,
+                    tags: control.filterTags
                 });
 
             }
         });
+        Globals.containers[containerIndex].controls.forEach((control => {
+            let tags = control.tags?.split(", ")
+            tags?.forEach((tag => {
+                if (!Globals.containers[containerIndex].tags?.includes(tag) && tag != "" && tag != undefined)
+                {
+                    Globals.containers[containerIndex].tags?.push(tag)
+                }
+            }))
+            
+        }))
     }); 
+    console.log(Globals.containers)
+
 }

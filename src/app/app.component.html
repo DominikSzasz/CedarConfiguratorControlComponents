@@ -1,5 +1,5 @@
 <div>
     <div *ngFor="let containerObj of containers">
-        <configurator-container [container]="containerObj" [containerDivider]="containerObj.divider || false" [containerTitleInside]="containerObj.titleInside || false" [containerTitle]="containerObj.containerName || ''"></configurator-container>
+        <configurator-container [container]="containerObj" [containerDivider]="containerObj.divider || false" [containerTitleInside]="containerObj.titleInside || false" [containerTitle]="containerObj.containerName || ''" [tags]="containerObj.tags || []"></configurator-container>
     </div>
 </div>

@@ -1,20 +1,6 @@
 <div class="container">
     <div class="filter-container">
-        <filter-tag filterName="filter 1" [selected]="selected"/>
-        <filter-tag filterName="filter 2" [selected]="selected" />
-        <filter-tag filterName="Name for a filter" [selected]="selected" />
-        <filter-tag filterName="filter 3" [selected]="selected" />
-        <filter-tag filterName="filter 3" [selected]="selected" />
-        <filter-tag filterName="some sort of filter" [selected]="selected" />
-        <filter-tag filterName="filter 3" [selected]="selected" />
-        <filter-tag filterName="The best filter" [selected]="selected" />
-        <filter-tag filterName="filter 3" [selected]="selected" />
-        <filter-tag filterName="filter" [selected]="selected" />
-        <filter-tag filterName="This is a filter" [selected]="selected" />
-        <filter-tag filterName="filter 3" [selected]="selected" />
-        <filter-tag filterName="filter 3" [selected]="selected" />
-        <filter-tag filterName="filter" [selected]="selected" />
-        <filter-tag filterName="random name" [selected]="selected" />
+        <filter-tag *ngFor="let tag of tags" filterName="{{tag}}" [selected]="selected"/>
         
     </div>
     <div class="button-container">

@@ -29,15 +29,17 @@ export class ControlContainerComponent {
   @Input() containerDivider: boolean = false
   @Input() containerTitleInside: boolean = false
   @Input() containerTitle: string = ""
+  @Input() tags: string[] = []
 
   ngOnInit() {
     this.el.nativeElement.classList.add(this.container.containerId);
     getContainerVars(this.container.containerId!);
-    console.log(this.containerTitleInside)
   }
   
   ngAfterViewInit() {
       this.controlArray = this.children.toArray();
+      console.log(this.tags)
+
   }
   selectedControl: string = "";
   changeSelected(index: number)
