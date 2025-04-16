@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, Input } from '@angular/core';
+import { Component, ElementRef, Renderer2, Input, Output, EventEmitter } from '@angular/core';
 import { FilterTagComponent } from "../filter-tag/filter-tag.component";
 import { CommonModule } from '@angular/common';
 
@@ -9,13 +9,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './filter-bar.component.less'
 })
 export class FilterBarComponent {
-selected:string[] = []
+@Input() selected:string[] = []
 @Input() tags: string[] = []
+@Output() selectFilters: EventEmitter<string[]> = new EventEmitter();
 displayselected() {
   console.log(this.selected)
 }
-ngOnInitI(){
-  console.log(this.tags)
+// ngOnInit(){
+//   console.log(this.tags)
+// }
+selectNewFilters()
+{
+  this.selectFilters.emit(this.selected)
 }
-
 }

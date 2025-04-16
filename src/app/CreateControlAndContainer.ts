@@ -13,6 +13,7 @@ export interface Control {
     filterTags?: string;
     divider?: boolean;
     tags?: string;
+    tagsArray?: string[];
 }
 export interface Container {
     containerName?: string;
@@ -82,7 +83,8 @@ export function getContainers()
                     description: control.description,
                     filterTags: control.filterTags,
                     divider: dividerTF,
-                    tags: control.filterTags
+                    tags: control.filterTags,
+                    tagsArray: control.filterTags?.split(", ")
                 });
 
             }

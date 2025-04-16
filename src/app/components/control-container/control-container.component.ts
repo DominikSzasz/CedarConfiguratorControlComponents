@@ -30,17 +30,35 @@ export class ControlContainerComponent {
   @Input() containerTitleInside: boolean = false
   @Input() containerTitle: string = ""
   @Input() tags: string[] = []
+  selectedFilters: string[] = []
 
   ngOnInit() {
     this.el.nativeElement.classList.add(this.container.containerId);
     getContainerVars(this.container.containerId!);
+    
   }
   
   ngAfterViewInit() {
       this.controlArray = this.children.toArray();
-      console.log(this.tags)
+      // console.log(this.tags)
 
   }
+  selectFilters(tags: string[]) {
+
+    this.container.controls.forEach((control => {
+      console.log(control.controlId + " " + control.title! + ": " + control.tags)
+    }))
+    if (tags.length > 0) {
+      this.container.controls = this.container.controls.filter(control => 
+        control.tagsArray!.some(tag => tags.includes(tag))
+      );
+    }
+    else {
+      //GET BACK WHEN EMPTY
+    }
+    
+  }
+  
   selectedControl: string = "";
   changeSelected(index: number)
   {
