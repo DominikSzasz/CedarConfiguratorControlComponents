@@ -32,6 +32,7 @@ export class ControlContainerComponent {
   @Input() containerTitle: string = ""
   @Input() tags: string[] = []
   selectedFilters: string[] = []
+  searchVal = ""
 
   ngOnInit() {
     this.el.nativeElement.classList.add(this.container.containerId);
@@ -41,6 +42,28 @@ export class ControlContainerComponent {
   
   ngAfterViewInit() {
       this.controlArray = this.children.toArray();
+  }
+  searchBarClick(value:string)
+  {
+    if (value) 
+    {
+      this.selectFilters(this.selectedFilters)
+
+      this.container.controls = this.container.controls.filter(control => 
+        control.title!.includes(value)
+      );
+    } else {
+
+      Globals.containers = JSON.parse(JSON.stringify(Globals.containerReference))
+      Globals.containers.forEach((container => {
+      if (container.containerId == this.container.containerId)
+      {
+        this.container.controls = container.controls
+      }
+    }))
+    this.selectFilters(this.selectedFilters)
+
+    }
 
   }
   selectFilters(tags: string[]) {

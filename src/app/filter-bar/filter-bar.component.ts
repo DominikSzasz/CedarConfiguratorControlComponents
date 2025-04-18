@@ -15,9 +15,6 @@ export class FilterBarComponent {
 displayselected() {
   console.log(this.selected)
 }
-// ngOnInit(){
-//   console.log(this.tags)
-// }
 selectNewFilters()
 {
   this.selectFilters.emit(this.selected)
@@ -25,9 +22,6 @@ selectNewFilters()
 removeAllFilters()
 {
   this.selected = []
-  this.tags.forEach((tag => {
-    console.log(tag)
-  }))
   this.selectNewFilters()
 }
 }

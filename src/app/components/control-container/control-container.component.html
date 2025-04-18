@@ -1,6 +1,8 @@
 <div class="container">
   <div class="outer-title" *ngIf="!containerTitleInside">
+
     <h1 class="title">{{containerTitle}}</h1>
+    
     <hr *ngIf="containerDivider" class="inner-title-divider">
   </div>
     <div class="control-container">
@@ -9,12 +11,11 @@
         <hr *ngIf="containerDivider" class="inner-title-divider">
       </div>
       <div class="search-container">
-        <search-bar />
+        <search-bar (searchVal)="searchBarClick($event)" />
       </div>
       <div class="filter-container">
         <filter-bar [tags]="tags" [selected]="selectedFilters" (selectFilters)="selectFilters($event)"/>
       </div>
-
       <configurator-control
     *ngFor="let control of container.controls; let i = index"
     [cardImg]="control.imageRef || ''"

@@ -101,6 +101,5 @@ export function getContainers()
             
         }))
     }); 
-    console.log(Globals.containers)
     Globals.containerReference = JSON.parse(JSON.stringify(Globals.containers));
 }
