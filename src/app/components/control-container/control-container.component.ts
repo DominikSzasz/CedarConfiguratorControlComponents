@@ -5,6 +5,7 @@ import { Container, Control } from '../../CreateControlAndContainer';
 import { getContainerVars } from './container-setup';
 import { FilterBarComponent } from "../../filter-bar/filter-bar.component";
 import { SearchBarComponent } from '../../search-bar/search-bar.component';
+import { Globals } from '../../CreateControlAndContainer';
 @Component({
   selector: 'configurator-container',
   standalone: true,
@@ -40,11 +41,16 @@ export class ControlContainerComponent {
   
   ngAfterViewInit() {
       this.controlArray = this.children.toArray();
-      // console.log(this.tags)
 
   }
   selectFilters(tags: string[]) {
-
+    Globals.containers = JSON.parse(JSON.stringify(Globals.containerReference))
+    Globals.containers.forEach((container => {
+      if (container.containerId == this.container.containerId)
+      {
+        this.container.controls = container.controls
+      }
+    }))
     this.container.controls.forEach((control => {
       console.log(control.controlId + " " + control.title! + ": " + control.tags)
     }))
@@ -53,10 +59,6 @@ export class ControlContainerComponent {
         control.tagsArray!.some(tag => tags.includes(tag))
       );
     }
-    else {
-      //GET BACK WHEN EMPTY
-    }
-    
   }
   
   selectedControl: string = "";

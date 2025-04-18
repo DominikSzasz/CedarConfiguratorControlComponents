@@ -22,4 +22,12 @@ selectNewFilters()
 {
   this.selectFilters.emit(this.selected)
 }
+removeAllFilters()
+{
+  this.selected = []
+  this.tags.forEach((tag => {
+    console.log(tag)
+  }))
+  this.selectNewFilters()
+}
 }

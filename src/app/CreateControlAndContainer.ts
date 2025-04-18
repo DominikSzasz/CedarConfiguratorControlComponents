@@ -28,6 +28,7 @@ export interface Container {
 }
 export class Globals {
     static containers: Container[] = []
+    static containerReference: Container[] = [] //To get back containers after being filtered
 }
 export function getContainers()
 {
@@ -101,5 +102,5 @@ export function getContainers()
         }))
     }); 
     console.log(Globals.containers)
-
+    Globals.containerReference = JSON.parse(JSON.stringify(Globals.containers));
 }
