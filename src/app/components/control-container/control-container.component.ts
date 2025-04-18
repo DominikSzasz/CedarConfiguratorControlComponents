@@ -50,7 +50,7 @@ export class ControlContainerComponent {
       this.selectFilters(this.selectedFilters)
 
       this.container.controls = this.container.controls.filter(control => 
-        control.title!.includes(value)
+        control.title!.toLowerCase().includes(value.toLowerCase()) || control.description!.toLowerCase().includes(value.toLowerCase())
       );
     } else {
 
