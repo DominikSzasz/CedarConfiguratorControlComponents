@@ -1,9 +1,23 @@
+::ng-deep :root { 
+    --filter-gap-side: 25px;
+    --search-filter-gap: 50px;
+    --filter-button-height: 50px;
+    --filter-button-width: 50px;
+    --filter-button-color: rgba(51, 67, 94, 1);
+    --filter-button-clicked-color: #555555;
+    --filter-button-disabled-color: #999999;
+    --filter-button-text-color: #000000;
+    --filter-background-color: #ffffff;
+}
 .container {
+    margin-top: var(--search-filter-gap);
     display: flex;
     width: 100%;
 }
 .filter-container {
-    margin-left: 25px;
+    background-color: var(--filter-background-color);
+
+    margin-left: var(--filter-gap-side);
     display: flex;
     width: 75%;
     gap: 10px;
@@ -12,23 +26,25 @@
     padding: 20px;
 }
 .button-container {
-    display: flex; /* Enable Flexbox */
-    flex-direction: column; /* Stack buttons vertically */
-    // justify-content: center; 
+    display: flex;
+    flex-direction: column;
     width: 15%;
     margin-left: 15px;
-    margin-right: 25px;
+    margin-right: var(--filter-gap-side);
+
 } 
 .button {
     width: 120px;
     margin-bottom: 10px;
     height: 20px;
-    background-color: rgba(51, 67, 94, 1);
+    background-color: var(--filter-button-color);
     display: flex;
     justify-content: center;
-    // align-items: center; 
     padding-top: 13px; 
     padding-bottom: 13px; 
     color: white;
     font-size: 16px;
+}
+.button:enabled:active {
+    background-color: var(--filter-button-clicked-color) !important;
 }

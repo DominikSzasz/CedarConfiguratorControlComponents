@@ -14,7 +14,7 @@
         <search-bar (searchVal)="searchBarClick($event)" />
       </div>
       <div class="filter-container">
-        <filter-bar [tags]="tags" [selected]="selectedFilters" (selectFilters)="selectFilters($event)"/>
+        <filter-bar [filterId]="filterId" [tags]="tags" [selected]="selectedFilters" (selectFilters)="selectFilters($event)" [disabled]="false"/>
       </div>
       <configurator-control
     *ngFor="let control of container.controls; let i = index"
@@ -24,7 +24,8 @@
     [controlType]="control.controlSet || ''"
     [controlId]="control.controlId || ''"
     (changeSelected)="changeSelected(i)"
-    [dividerTF] = "control.divider || false"
+    [dividerTF]="control.divider || false"
+    [imageTF]="control.imageTF || false"
     >
     </configurator-control>
         

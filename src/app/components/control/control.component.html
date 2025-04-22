@@ -1,6 +1,6 @@
 <div class="control-card" (click)="selectControl();"> <!-- (click)='changeColor();'> -->
     <div class="control-content">
-        <div class="control-img">
+        <div *ngIf="imageTF" class="control-img">
             <img src={{cardImg}} alt="Image">
         </div>
         <hr *ngIf="dividerTF" class="control-hr">

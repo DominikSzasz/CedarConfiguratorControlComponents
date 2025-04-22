@@ -1,3 +1,3 @@
-<div class="container" (click)="select()" [ngStyle]="{'background-color': isSelected() ? 'rgba(51, 67, 94, 1)' : '#cccccc'}">
+<div class="container" (click)="select()" [ngStyle]="{'background-color': isSelected() ? 'var(--selected-tag-color)' : 'var(--unselected-tag-color)', 'font-family': isSelected() ? 'var(--selected-tag-text-font)' : 'var(--unselected-tag-text-font)', 'font-size': isSelected() ? 'var(--selected-tag-text-size)' : 'var(--unselected-tag-text-size)', 'color': isSelected() ? 'var(--selected-tag-text-color)' : 'var(--unselected-tag-text-color)', 'font-weight': isSelected() ? 'var(--selected-tag-text-weight)' : 'var(--unselected-tag-weight)', 'font-style': isSelected() ? 'var(--selected-tag-text-style)' : 'var(--unselected-tag-text-style)'}">
     {{filterName}}
 </div>

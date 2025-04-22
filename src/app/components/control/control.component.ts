@@ -25,6 +25,7 @@ export class ControlComponent {
   @Input() controlType: string = ""
   @Input() selectedControls: string[] = [];
   @Input() dividerTF: boolean = false;
+  @Input() imageTF: boolean = false;
   @Output() changeSelected: EventEmitter<void> = new EventEmitter();
 
   state: ControlStates = ControlStates.unselected;
@@ -68,7 +69,10 @@ export class ControlComponent {
         controlCard.style.borderColor = "var(--selected-border-color)";
         controlTitle.style.color = "var(--selected-title-color)";
         controlText.style.color = "var(--selected-text-color)";
-        controlDivider.style.backgroundColor = "var(--selected-divider-color)";
+        if (controlDivider)
+        {
+          controlDivider.style.backgroundColor = "var(--selected-divider-color)";
+        }
         break;
         
       case ControlStates.unselected:
@@ -77,7 +81,10 @@ export class ControlComponent {
         controlCard.style.borderColor = "var(--unselected-border-color)";
         controlTitle.style.color = "var(--unselected-title-color)";
         controlText.style.color = "var(--unselected-text-color)";
-        controlDivider.style.backgroundColor = "var(--unselected-divider-color)";
+        if (controlDivider)
+        {
+          controlDivider.style.backgroundColor = "var(--unselected-divider-color)";
+        }
         break;
     }
   }

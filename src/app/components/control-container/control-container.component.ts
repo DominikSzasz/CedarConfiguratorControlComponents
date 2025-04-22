@@ -31,6 +31,7 @@ export class ControlContainerComponent {
   @Input() containerTitleInside: boolean = false
   @Input() containerTitle: string = ""
   @Input() tags: string[] = []
+  @Input() filterId: string = ""
   selectedFilters: string[] = []
   searchVal = ""
 
@@ -89,6 +90,7 @@ export class ControlContainerComponent {
   {
     for (let i = 0; i < this.controlArray.length; i++) {
       this.controlArray[i].changeState(ControlStates.unselected)
+
     }
     this.controlArray[index].changeState(ControlStates.selected)
     this.selectedControl = this.controlArray[index].controlId

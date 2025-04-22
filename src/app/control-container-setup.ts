@@ -87,30 +87,55 @@ export const containerParamLookupTable: Record<string, string> = {
         "containerScrollable_TF": "",
         "containerSearch_TF": "",
         "containerFilter_TF": "",
-        "ContainerControllType": "",
-        "containerGapSide_filter": "",
-        "containerGapSide_search": "",
-        "containerGap_search_filter": "",
-        "containerGapTop_searchFilter": "",
-        "containerSelectedFilter_color": "",
-        "containerNotSelectedFilter_color": "",
-        "containerSearchFilterBackground_color": "",
-        "containerSearchText1_color": "",
-        "containerSearchText2_color": "",
-        "containerSearchText1_font": "",
-        "containerSearchText2_font": "",
-        "containerSearchText1_size": "",
-        "containerSearchText2_size": "",
-        "containerSearchText1_weight": "",
-        "containerSearchText2_weight": ""    
+        "ContainerControllType": "",   
 }
 
+export const searchFilterParamLookupTable: Record<string, string> = {
+    "containerGapSide_filter": "--filter-gap-side",
+    "containerGapSide_search": "--search-gap-side",
+    "containerGap_search_filter": "--search-filter-gap",
+    "containerGapTop_searchFilter": "--search-gap-top",
+    "containerSelectedFilterTag_color": "--selected-tag-color",
+    "containerNotSelectedFilterTag_color": "--unselected-tag-color",
+    "containerSelectedFilterTagText_color": "--selected-tag-text-color",
+    "containerNotSelectedFilterTagText_color": "--unselected-tag-text-color",
+    "containerSelectedFilterTagText_font": "--selected-tag-text-font",
+    "containerNotSelectedFilterTagText_font": "--unselected-tag-text-font",
+    "containerSelectedFilterTagText_size": "--selected-tag-text-size",
+    "containerNotSelectedFilterTagText_size": "--unselected-tag-text-size",
+    "containerSelectedFilterTagText_style": "--selected-tag-text-style",
+    "containerNotSelectedFilterTagText_style": "--unselected-tag-text-style",
+    "containerSelectedFilterTagText_weight": "--selected-tag-text-weight",
+    "containerNotSelectedFilterTagText_weight": "--unselected-tag-text-weight",
+    "containerFilterTag_height": "--tag-hegiht",
+    "containerFilterTag_length": "--tag-width",
+    "containerFilterButton_height2": "--filter-button-height",
+    "containerFilterButton_length3": "--filter-button-width",
+    "containerSearchFilterButton_color": "--filter-button-color",
+    "containerSearchFilterClickedButton_color": "--filter-button-clicked-color",
+    "containerSearchFilterDisabledButton_color": "--filter-button-disabled-color",
+    "containerSearchFilterButtonText_color": "--filter-button-text-color",
+    "containerSearchFilterBackground_color22": "--filter-background-color",
+    "containerSearchText1_color": "--container-search-text-color-1",
+    "containerSearchText2_color": "--container-search-text-color-2",
+    "containerSearchText1_font": "--container-search-text-font-1",
+    "containerSearchText2_font": "--container-search-text-font-2",
+    "containerSearchText1_size": "--container-search-text-size-1",
+    "containerSearchText2_size": "--container-search-text-size-2",
+    "containerSearchText1_weight": "--container-search-text-weight-1",
+    "containerSearchText2_weight": "--container-search-text-weight-2",
+    "containerSearchText1_style": "--container-search-text-style-1",
+    "containerSearchText2_style": "--container-search-text-style-2",
+    "containerSearchButton_length": "--search-button-width",
+    "containerSearchButton_height": "--search-button-height"  
+}
   type ControlContainerTypes = Record<string, Record<string, string>>;
   type ProjGlob = Record<string, string>;
 
   export class GlobalValues {
     static controlTypes: Partial<ControlContainerTypes> = {};
     static containerTypes: Partial<ControlContainerTypes> = {};
+    static searchFilterTypes: Partial<ControlContainerTypes> = {};
     static projGlob: ProjGlob = {};
   }
 
@@ -135,6 +160,20 @@ export function getContainerTypes() {
                 let cssName:string = containerParamLookupTable[key]
                 GlobalValues.containerTypes[controlSet]![cssName]! = value
             }
+        });
+    });  
+}
+export function getSearchFilterTypes() {
+    parameterDatabase.database[0].SearchFilterDef.forEach((searchFilter) => {
+        let controlSet:string = searchFilter["ID"]
+        GlobalValues.searchFilterTypes[controlSet] = {} as Record<string, string>;
+        Object.entries(searchFilter).forEach(([key, value]) => {
+            if (value !== "" && searchFilterParamLookupTable[key] !== undefined) {
+                let cssName:string = searchFilterParamLookupTable[key]
+                GlobalValues.searchFilterTypes[controlSet]![cssName]! = value
+
+            }
+
         });
     });  
 }

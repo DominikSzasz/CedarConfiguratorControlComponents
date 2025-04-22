@@ -90,7 +90,7 @@
 					"title": "PERGOLA UNO",
 					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad...",
 					"imageRef": "./assets/Rectangle.png",
-					"filterTags": ""
+					"filterTags": "This is a test"
 				},
 				{
 					"controlId": "control_2_4",

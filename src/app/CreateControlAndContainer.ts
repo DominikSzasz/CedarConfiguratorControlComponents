@@ -14,6 +14,7 @@ export interface Control {
     divider?: boolean;
     tags?: string;
     tagsArray?: string[];
+    imageTF?: boolean;
 }
 export interface Container {
     containerName?: string;
@@ -25,6 +26,7 @@ export interface Container {
     divider?: boolean;
     titleInside?: boolean;
     tags?: string[];
+    filterId?: string;
 }
 export class Globals {
     static containers: Container[] = []
@@ -56,11 +58,12 @@ export function getContainers()
         {
             titleInside = false
         }
-        Globals.containers[containerIndex] = {containerId: container.containerId, controls: [], divider: containerDivider, titleInside: titleInside, containerName: containerName, tags: []}
+        Globals.containers[containerIndex] = {filterId: container.containerFilter_ID, containerId: container.containerId, controls: [], divider: containerDivider, titleInside: titleInside, containerName: containerName, tags: []}
         controlContainerDatabase.database[0].Control.forEach((control, controlIndex) => {
 
             if (control.containerRef === container.containerId) {
                 let dividerTF = false
+                let imageTF = false
 
                 parameterDatabase.database[0].ControlDef.forEach((controlParams, controlParamsIndex) => {
                     if (control.controlSet == controlParams.controlSet)
@@ -71,6 +74,13 @@ export function getContainers()
                         } else
                         {
                             dividerTF = false
+                        }
+                        if (controlParams.controlBoxPicture_TF == "true" || controlParams.controlBoxPicture_TF == "T")
+                        {
+                            imageTF = true
+                        } else
+                        {
+                            imageTF = false
                         }
                     }
                 }); 
@@ -85,7 +95,8 @@ export function getContainers()
                     filterTags: control.filterTags,
                     divider: dividerTF,
                     tags: control.filterTags,
-                    tagsArray: control.filterTags?.split(", ")
+                    tagsArray: control.filterTags?.split(", "),
+                    imageTF: imageTF
                 });
 
             }
@@ -102,4 +113,5 @@ export function getContainers()
         }))
     }); 
     Globals.containerReference = JSON.parse(JSON.stringify(Globals.containers));
+    console.log(Globals.containers)
 }

@@ -15,19 +15,6 @@ export class FilterTagComponent {
   isSelected(): boolean {
     return this.selected.includes(this.filterName);
   }
-  // select() {
-  //   const filter = this.el.nativeElement.querySelector('.container');
-
-  //   if (this.selected.includes(this.filterName))
-  //   {
-  //     this.selected.splice(this.selected.findIndex(item => item === this.filterName),1)
-  //     filter.style.backgroundColor = "#cccccc"
-  //   }
-  //   else {
-  //     this.selected.push(this.filterName)
-  //     filter.style.backgroundColor = "rgba(51, 67, 94, 1)"
-  //   }
-  // }
   select() {
     if (this.selected.includes(this.filterName)) {
       this.selected.splice(this.selected.findIndex(item => item === this.filterName), 1);
