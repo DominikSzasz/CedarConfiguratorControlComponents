@@ -5,6 +5,7 @@
     </div>
     <div class="button-container">
         <div class="button" [ngStyle]="{'background-color': disabled ? 'var(--filter-button-disabled-color)' : 'var(--filter-button-color)'}" (click)="selectNewFilters()">Select</div>
+        <div class="button"  (click)="selectNewFilters()">Select</div>
         <div class="button" [ngStyle]="{'background-color': disabled ? 'var(--filter-button-disabled-color)' : 'var(--filter-button-color)'}" (click)="removeAllFilters()">Clear All Filters</div>
     </div>
 </div>
